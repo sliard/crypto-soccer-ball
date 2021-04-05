@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.b100e6da.chunk.css",
-    "main.js": "/static/js/main.b4dbab34.chunk.js",
-    "main.js.map": "/static/js/main.b4dbab34.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b240f91f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b240f91f.js.map",
-    "static/css/2.a6d1c13d.chunk.css": "/static/css/2.a6d1c13d.chunk.css",
-    "static/js/2.dcf4ebbd.chunk.js": "/static/js/2.dcf4ebbd.chunk.js",
-    "static/js/2.dcf4ebbd.chunk.js.map": "/static/js/2.dcf4ebbd.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.a59140ffa046cbeb327e4ece918cc4de.js": "/precache-manifest.a59140ffa046cbeb327e4ece918cc4de.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.a6d1c13d.chunk.css.map": "/static/css/2.a6d1c13d.chunk.css.map",
-    "static/css/main.b100e6da.chunk.css.map": "/static/css/main.b100e6da.chunk.css.map"
+    "main.css": "/crypto-soccer-ball/static/css/main.b100e6da.chunk.css",
+    "main.js": "/crypto-soccer-ball/static/js/main.825b85dd.chunk.js",
+    "main.js.map": "/crypto-soccer-ball/static/js/main.825b85dd.chunk.js.map",
+    "runtime-main.js": "/crypto-soccer-ball/static/js/runtime-main.d1fb0205.js",
+    "runtime-main.js.map": "/crypto-soccer-ball/static/js/runtime-main.d1fb0205.js.map",
+    "static/css/2.a6d1c13d.chunk.css": "/crypto-soccer-ball/static/css/2.a6d1c13d.chunk.css",
+    "static/js/2.dcf4ebbd.chunk.js": "/crypto-soccer-ball/static/js/2.dcf4ebbd.chunk.js",
+    "static/js/2.dcf4ebbd.chunk.js.map": "/crypto-soccer-ball/static/js/2.dcf4ebbd.chunk.js.map",
+    "index.html": "/crypto-soccer-ball/index.html",
+    "precache-manifest.d46138943ebbf3850b0e781c01039753.js": "/crypto-soccer-ball/precache-manifest.d46138943ebbf3850b0e781c01039753.js",
+    "service-worker.js": "/crypto-soccer-ball/service-worker.js",
+    "static/css/2.a6d1c13d.chunk.css.map": "/crypto-soccer-ball/static/css/2.a6d1c13d.chunk.css.map",
+    "static/css/main.b100e6da.chunk.css.map": "/crypto-soccer-ball/static/css/main.b100e6da.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.b240f91f.js",
+    "static/js/runtime-main.d1fb0205.js",
     "static/css/2.a6d1c13d.chunk.css",
     "static/js/2.dcf4ebbd.chunk.js",
     "static/css/main.b100e6da.chunk.css",
-    "static/js/main.b4dbab34.chunk.js"
+    "static/js/main.825b85dd.chunk.js"
   ]
 }
