@@ -5,10 +5,13 @@ import "./ERC721URIStorage.sol";
 
 contract CryptoSoccerBall is ERC721URIStorage {
 
+    // nb total of ball created
     uint32 nbBall;
 
+    // address of contract creator
     address referee;
 
+    // delay before you can steal a ball (2h by default)
     uint64 minStealDelay;
 
     // Mapping from token ID to last shoot timestamp
@@ -20,6 +23,7 @@ contract CryptoSoccerBall is ERC721URIStorage {
     // Mapping from owner to boolean
     mapping (address => bool) private _alreadyMint;
 
+    // Mapping from masterOwner to ballId
     mapping (address => uint256) private _haveMaster;
 
 
@@ -34,7 +38,8 @@ contract CryptoSoccerBall is ERC721URIStorage {
     }
 
     /**
-     * @dev Everybody can create one ball. The account that create the ball become the masterOwner.
+     * @dev Everybody can create one and only one ball.
+     *      The account that create the ball become the masterOwner.
      *
      */
     function createSoccerBall() public {
@@ -43,7 +48,7 @@ contract CryptoSoccerBall is ERC721URIStorage {
         require(!_alreadyMint[_msgSender()], "You already mint a ball");
         uint _id = nbBall + 1;
         nbBall = nbBall + 1;
-        _mint(_msgSender(), _id);
+        _safeMint(_msgSender(), _id);
         _setTokenURI(_id, "QmauiCZRfq8vmG3wSKcYNyJ8ZRLAM87KUoHGkj6VZmbzGa");
         _masterOwner[_id] = _msgSender();
         _lastShot[_id] = uint64(block.timestamp);
@@ -203,7 +208,7 @@ contract CryptoSoccerBall is ERC721URIStorage {
      *
      * - only referee, owner master and token owner can transfert the ball
      */
-    function shotTo(address to, uint256 tokenId) public virtual {
+    function shootTo(address to, uint256 tokenId) public virtual {
         address master = _masterOwner[tokenId];
         require(_msgSender() == referee || _msgSender() == master || _isApprovedOrOwner(_msgSender(), tokenId), "ERC721: transfer caller is not owner nor approved");
         address owner = ERC721.ownerOf(tokenId);

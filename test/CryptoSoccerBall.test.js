@@ -14,30 +14,22 @@ contract('CryptoSoccerBall', (accounts) => {
   before(async () => {
     contract = await CryptoSoccerBall.deployed();
   })
-
   describe('deployment', async () => {
     it('deploys successfully', async () => {
       const address = contract.address
       assert.notEqual(address, 0x0)
-      assert.notEqual(address, '')
-      assert.notEqual(address, null)
       assert.notEqual(address, undefined)
     })
-
     it('has a name', async () => {
       const name = await contract.name()
       assert.equal(name, 'Soccer Ball')
     })
-
     it('has a symbol', async () => {
       const symbol = await contract.symbol()
       assert.equal(symbol, 'BALL')
     })
-
   })
-
   describe('minting', async () => {
-
     it('creates a new ball', async () => {
       const result = await contract.createSoccerBall({ from: accounts[1] });
       const nbBall = await contract.getNbBall();
@@ -49,7 +41,6 @@ contract('CryptoSoccerBall', (accounts) => {
       assert.equal(event.to, accounts[1], 'bad to address')
 
     })
-
     it('launch Ball', async () => {
         const result = await contract.safeTransferFrom(accounts[1], accounts[2], 1, { from: accounts[1] })
         // Fail : account[0] do not have token 1 anymore
@@ -58,7 +49,6 @@ contract('CryptoSoccerBall', (accounts) => {
         // ball come back
         await contract.safeTransferFrom(accounts[2], accounts[1], 1, { from: accounts[2] })
     })
-
     it('creator can push Ball', async () => {
         const result = await contract.safeTransferFrom(accounts[1], accounts[2], 1, { from: accounts[1] })
         // ball come back by creator

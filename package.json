@@ -1,0 +1,20 @@
+{
+  "name": "crypto-soccer-ball",
+  "version": "0.1.0",
+  "description": "Crypto Soccer Ball",
+  "author": "samuel@liard.me",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sliard/crypto-soccer-ball.git"
+  },
+  "license": "MIT license",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.3.0",
+    "@truffle/hdwallet-provider": "^1.2.6",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "chai-bignumber": "3.0.0",
+    "dotenv": "^8.2.0",
+    "truffle-flattener": "^1.4.2"
+  }
+}

@@ -24,7 +24,6 @@ class App extends Component {
         deployedNetwork && deployedNetwork.address,
       );
 
-      console.log("instance.events : ",instance.events);
       const myApp = this;
       const selectedAccount = accounts[0];
 
@@ -75,6 +74,10 @@ class App extends Component {
     
     const canCreateBall = (ballId == 0) || await contract.methods.canCreateBall(selectedAccount).call({ from: selectedAccount });
     console.log("canCreateBall : ", canCreateBall);
+
+    contract.methods.canCreateBall(selectedAccount).call({ from: selectedAccount }).then(result => {console.log("canCreateBall then", result)}).catch((err) => {
+      alert(err.message);
+    });
 
     const referee = await contract.methods.getReferee().call({ from: selectedAccount });
     console.log("referee : ", referee);
@@ -195,11 +198,11 @@ class App extends Component {
 
   }
 
-  shot = (to, ballId) => {
+  shoot = (to, ballId) => {
     const { selectedAccount, contract } = this.state;
 
-    contract.methods.shotTo(to, ballId).send({ from: selectedAccount }).then((result) => {
-      console.log("shot Ok");
+    contract.methods.shootTo(to, ballId).send({ from: selectedAccount }).then((result) => {
+      console.log("shoot Ok");
       contract.methods.tokensOfOwner(selectedAccount).call({ from: selectedAccount }).then((result) => {
         this.setState({ allTokenOwn: result });
       });
@@ -336,17 +339,17 @@ class App extends Component {
           <section className="container mt-5">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <h3>Shot !</h3>
-                    <p>Only the referee, the masterOwner and the holder of the ball can shot into a soccer ball to send it to anybody.<br/></p>
+                    <h3>Shoot !</h3>
+                    <p>Only the referee, the masterOwner and the holder of the ball can shoot into a soccer ball to send it to anybody.<br/></p>
                     <form onSubmit={(event) => {
                       event.preventDefault()
-                      this.shot(event.target.dest.value, event.target.ballId.value)
+                      this.shoot(event.target.dest.value, event.target.ballId.value)
                       event.target.dest.value = "";
                       event.target.ballId.value = "";
                     }}>
                         <div className="form-group"><label>Ball Id</label><input id='ballId' className="form-control" type="text"/></div>
                         <div className="form-group"><label>Recipient</label><input id='dest' className="form-control" type="text" placeholder="Address 0x00..."/></div>
-                        <div className="form-group"><input className="btn btn-primary" type="submit" value='Shot'/></div>
+                        <div className="form-group"><input className="btn btn-primary" type="submit" value='Shoot'/></div>
                     </form>
                 </div>
                 <div className="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
