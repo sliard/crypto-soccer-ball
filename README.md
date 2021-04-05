@@ -12,8 +12,10 @@ Rules :
 * A masterOwner can offer his soccer ball to anybody that is not already a masterOwner of an another ball.
 
 More informations into 2 medium posts (in french)
-* (basic)[https://sliard.medium.com/jai-achet%C3%A9-un-chat-virtuel-66433db06b53]
-* (code sample)[https://sliard.medium.com/nft-et-football-e9885a6481d6]
+* [basic](https://sliard.medium.com/jai-achet%C3%A9-un-chat-virtuel-66433db06b53)
+* [code sample](https://sliard.medium.com/nft-et-football-e9885a6481d6)
+
+The game connected to Ropsten test network -> [here](https://liard.me/crypto-soccer-ball/).
 
 ## requirements
 
